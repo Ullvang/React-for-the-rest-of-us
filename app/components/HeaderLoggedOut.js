@@ -13,7 +13,9 @@ export default function HeaderLoggedOut({ setLoggedIn }) {
       });
       if (response.data) {
         setLoggedIn(true);
-        console.log(response.data);
+        localStorage.setItem("complexappToken", response.data.token);
+        localStorage.setItem("complexappUsername", response.data.username);
+        localStorage.setItem("complexappAvatar", response.data.avatar);
       } else {
         console.log("Incorrect login info");
       }
