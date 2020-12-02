@@ -15,6 +15,7 @@ function CreatePost(props) {
         body,
         token: localStorage.getItem("complexappToken"),
       });
+      props.addFlashMessages("Congrats, you successfully created a post.");
       props.history.push(`/post/${response.data}`);
       console.log("New post created");
     } catch (e) {
