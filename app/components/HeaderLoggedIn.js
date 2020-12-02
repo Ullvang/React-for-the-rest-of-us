@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HeaderLoggedIn({ setLoggedIn }) {
   function handleLogout() {
@@ -22,9 +23,9 @@ export default function HeaderLoggedIn({ setLoggedIn }) {
           src={localStorage.getItem("complexappAvatar")}
         />
       </a>
-      <a className="btn btn-sm btn-success mr-2" href="/create-post">
+      <Link to="/create-post" className="btn btn-sm btn-success mr-2">
         Create Post
-      </a>
+      </Link>
       <button className="btn btn-sm btn-secondary" onClick={handleLogout}>
         Sign Out
       </button>
