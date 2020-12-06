@@ -5,6 +5,7 @@ import Axios from "axios";
 import LoadingDotsIcon from "./LoadingDotsIcon";
 import ReactMarkDown from "react-markdown";
 import ReactTooltip from "react-tooltip";
+import NotFound from "./NotFound";
 
 export default function ViewSinglePost() {
   const { id } = useParams();
@@ -29,6 +30,10 @@ export default function ViewSinglePost() {
       ourRequest.cancel();
     };
   }, []);
+
+  if (!isLoading && !post) {
+    return <NotFound />;
+  }
 
   if (isLoading) {
     return (
